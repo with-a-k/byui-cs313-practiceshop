@@ -15,7 +15,8 @@
             <p><?=$item->get_desc()?></p>
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
-              <form id='<?php echo $item->get_name()?>'>
+              <form id='<?php echo $item->get_name()?>' method="POST" action="index.php">
+                <input type="submit">
               </form>
             </div>
           </div>
