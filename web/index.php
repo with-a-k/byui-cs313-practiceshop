@@ -13,7 +13,17 @@
           <div class="item">
             <h3><?=$item->get_name()?></h3>
             <p><?=$item->get_desc()?></p>
-            <button>Add to Cart</button>
+            <div class="inputs">
+              <p><?=$item->get_cost()?></p>
+              <?php if($item->get_options()) { ?>
+                <select>
+                  <?php foreach($item->get_options() as color) { ?>
+                    <option value=<?=color?>><?=color?></option>
+                  <?php } ?>
+                </select>
+              <?php } ?>
+              <button>Add to Cart</button>
+            </div>
           </div>
         </li>
       <?php } ?>

@@ -66,6 +66,6 @@
     new Item("Blaseball Cap", 7.99, "A neat wearable hat. Choose your favorite team! Note that some others may be unavailable.", $teams),
     new Item("Blaseball Blatt", 8.99, "A standard-issue blaseball blatt.", []),
     new Item("Blaseball Team Blatt", 9.49, "A blaseball blatt that comes in your team's colors. Note that some colors may be unavailable.", $teams),
-    new Item("Dial Tone Replica", 79.99, "A replica of Jessica Telephone's blatt.", [])
+    new Item("Dial Tone Replica", 79.99, "A replica of Jessica Telephone's gunblatt. Does not function if used as a gun or a telephone.", [])
   ];
 ?>
