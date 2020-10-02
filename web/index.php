@@ -15,16 +15,7 @@
             <p><?=$item->get_desc()?></p>
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
-              <form>
-                <?php if($item->get_options()) { ?>
-                  <select name="<?=$item->get_name()?>-color">
-                    <?php foreach(count($item->get_options()) > 0 as color) { ?>
-                      <option value="<?=color?>"><?=color?></option>
-                    <?php } ?>
-                  </select>
-                <?php } ?>
-                <button>Add to Cart</button>
-              </form>
+              
             </div>
           </div>
         </li>
