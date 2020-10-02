@@ -11,7 +11,7 @@
       <?php foreach ($items as $item) { ?>
         <li>
           <div class="item">
-            <h3><?=$item['name']?></h3>
+            <h3><?=$item['itemName']?></h3>
             <button>Add to Cart</button>
           </div>
         </li>

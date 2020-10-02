@@ -1,5 +1,5 @@
 <?php
-  $teams = [
+  $teams = array(
     "Baltimore Crabs",
     "Boston Flowers",
     "Breckenridge Jazz Hands",
@@ -16,7 +16,7 @@
     "San Francisco Lovers",
     "Unlimited Tacos",
     "Yellowstone Magic"
-  ];
+  );
 
   class Item {
     public $itemName = "";
