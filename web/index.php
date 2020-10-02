@@ -5,6 +5,7 @@
   </head>
   <body>
     <?php include 'items.php'?>
+    <h2>Item List</h2>
     <ul>
       <?php foreach ($items as $item) ?>
         <li>
@@ -14,6 +15,6 @@
         </li>
       <?php endforeach;?>
     </ul>
-
+    <a href="cart.php">View Cart</a>
   </body>
 </html>
