@@ -22,6 +22,8 @@
     public $itemName;
     public $itemCost;
     public $itemDesc;
+    public $customOptions;
+    public $color;
 
     function __construct($name, $cost, $desc, $customOptions) {
       $this->$itemName = $name;
@@ -31,7 +33,27 @@
     }
 
     function get_name() {
-      return $this->$itemName;
+      return $this->itemName;
+    }
+
+    function get_cost() {
+      return $this->itemCost;
+    }
+
+    function get_desc() {
+      return $this->itemDesc;
+    }
+
+    function get_color() {
+      return $this->color;
+    }
+
+    function set_color($color) {
+      $this->color = $color;
+    }
+
+    function get_options() {
+      return $this->customOptions;
     }
   }
   $items = [

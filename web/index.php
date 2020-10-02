@@ -11,7 +11,8 @@
       <?php foreach ($items as $item) { ?>
         <li>
           <div class="item">
-            <h3><?=$item.get_name()?></h3>
+            <h3><?=$item->get_name()?></h3>
+            <p><?=$item->get_desc()?></p>
             <button>Add to Cart</button>
           </div>
         </li>
