@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if (empty($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+  }
+  if ($_POST['item']) {
+
+  }
+?>
 <html>
   <head>
     <title>Shop</title>
@@ -16,7 +25,7 @@
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
               <form id='<?php echo $item->get_name()?>' method="POST" action="index.php">
-                <input type="submit">
+                <input type="submit" value="Add to cart">
               </form>
             </div>
           </div>
