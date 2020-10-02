@@ -11,6 +11,7 @@
         <li>
           <div class="item">
             <h3><?=$item['name']?></h3>
+            <button>Add to Cart</button>
           </div>
         </li>
       <?php endforeach;?>
