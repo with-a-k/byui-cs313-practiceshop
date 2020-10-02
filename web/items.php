@@ -19,15 +19,19 @@
   );
 
   class Item {
-    public $itemName = "";
-    public $itemCost = "";
-    public $itemDesc = "";
+    public $itemName;
+    public $itemCost;
+    public $itemDesc;
 
     function __construct($name, $cost, $desc, $customOptions) {
       $this->$itemName = $name;
       $this->$itemCost = $cost;
       $this->$itemDesc = $desc;
       $this->$itemCust = $customOptions;
+    }
+
+    function get_name() {
+      return $this->$itemName;
     }
   }
   $items = [
