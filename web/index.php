@@ -4,17 +4,18 @@
     <link rel=stylesheet href="styles/foundation.css">
   </head>
   <body>
-    <?php include 'items.php'?>
     <h2>Item List</h2>
+    <?php include 'items.php'?>
+
     <ul>
-      <?php foreach ($items as $item) ?>
+      <?php foreach ($items as $item) { ?>
         <li>
           <div class="item">
             <h3><?=$item['name']?></h3>
             <button>Add to Cart</button>
           </div>
         </li>
-      <?php endforeach;?>
+      <?php } ?>
     </ul>
     <a href="cart.php">View Cart</a>
   </body>

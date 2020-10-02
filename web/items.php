@@ -16,7 +16,7 @@
     "San Francisco Lovers",
     "Unlimited Tacos",
     "Yellowstone Magic"
-  ]
+  ];
 
   class Item {
     public $itemName = "";
