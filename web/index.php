@@ -9,8 +9,11 @@
       <?php foreach ($items as $item) ?>
         <li>
           <div class="item">
-            <h3><?=$item['name']</h3>
+            <h3><?=$item['name']?></h3>
           </div>
+        </li>
+      <?php endforeach;?>
+    </ul>
 
   </body>
 </html>
