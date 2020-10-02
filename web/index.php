@@ -17,7 +17,7 @@
               <p><?=$item->get_cost()?></p>
               <?php if($item->get_options()) { ?>
                 <select>
-                  <?php foreach($item->get_options() as color) { ?>
+                  <?php foreach(sizeof($item->get_options()) > 0 as color) { ?>
                     <option value=<?=color?>><?=color?></option>
                   <?php } ?>
                 </select>
