@@ -4,7 +4,7 @@
     <link rel=stylesheet href="styles/foundation.css">
   </head>
   <body>
-    <?php include "items.php"?>
+    <?php include 'items.php'?>
     <ul>
       <?php foreach ($items as $item) ?>
         <li>
