@@ -9,7 +9,7 @@
   </head>
   <body>
 
-    <form name="address" action="confirm.php">
+    <form name="address" action="confirm.php" method="POST">
       Street Address: <input type="text" name="address-street">
       State/Province: <input type="text" name="address-state">
       Country: <input type="text" name="address-country">
