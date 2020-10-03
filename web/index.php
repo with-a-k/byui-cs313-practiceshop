@@ -38,7 +38,7 @@
                   <?php endforeach; ?>
                 </select>
               <?php endif; ?>
-              <form id='<?php echo $form_name ?>' method="POST" action="index.php">
+              <form name='<?php echo $form_name ?>' method="POST" action="index.php">
                 <input type="submit" value="Add to cart">
               </form>
             </div>
