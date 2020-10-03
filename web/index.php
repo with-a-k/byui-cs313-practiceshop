@@ -25,9 +25,6 @@
   </head>
   <body>
     <h2>Item List</h2>
-    <p><?php if (isset($postArgs)) {
-      var_dump($postArgs);
-    }?></p>
     <ul>
       <?php foreach ($items as $index => $item): ?>
         <?php $form_name = $item->get_name() ?>
