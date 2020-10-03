@@ -5,7 +5,9 @@
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
   }
-  $postArgs = filter_input_array($_POST);
+  if(isset($_POST)) {
+    $postArgs = filter_input_array($_POST);
+  }
   foreach ($items as $index => $item) {
     if (!empty($postArgs[$item.'submit'])) {
       $addName = $item->get_name();
