@@ -18,7 +18,7 @@
     <ul>
       <?php foreach ($_SESSION['cart'] as $index => $item): ?>
         <?php $form_name = "item-".$index ?>
-        <?php echo $item?>
+        <?php echo $form_name?>
         <li>
           <div class="item">
             <h3><?php echo $item->get_name() ?></h3>
