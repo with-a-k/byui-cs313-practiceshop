@@ -22,7 +22,7 @@
         <?php echo $form_name ?>
         <li>
           <div class="item">
-            <h3><?php echo $_SESSION['cart'][$index] ?></h3>
+            <h3><?php echo $_SESSION['cart'][0] ?></h3>
             <p><?php echo $item->get_desc() ?></p>
             <div class="inputs">
               <p><?php echo $item->get_cost() ?></p>
