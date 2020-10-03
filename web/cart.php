@@ -21,7 +21,7 @@
         <?php $form_name = "item-".$index ?>
         <li>
           <div class="item">
-            <h3><?php echo $item->itemName ?></h3>
+            <h3><?php echo $item ?></h3>
             <p><?php echo $item->get_desc() ?></p>
             <div class="inputs">
               <p><?php echo $item->get_cost() ?></p>
