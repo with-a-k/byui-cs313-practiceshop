@@ -32,9 +32,9 @@
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
               <?php if(count($item->get_options()) > 1): ?>
-                <select name="<?=$item->get_name()?>-color">
-                  <?php foreach($item->get_options() as color): ?>
-                    <option value="<?php echo $color?>"><?=$color?></option>
+                <select name="<?php echo $item->get_name()?>-color">
+                  <?php foreach($item->get_options() as $color): ?>
+                    <option value="<?php echo $color?>"><?php echo $color?></option>
                   <?php endforeach; ?>
                 </select>
               <?php endif; ?>
