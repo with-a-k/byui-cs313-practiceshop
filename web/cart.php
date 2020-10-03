@@ -1,6 +1,7 @@
 <?php
   include 'items.php';
   session_start();
+  var_dump($_POST);
   foreach ($_SESSION['cart'] as $index => $item) {
     if (isset($_POST["item-".$index])) {
       array_splice($_SESSION['cart'], $index, 1);
