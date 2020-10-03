@@ -31,13 +31,13 @@
             <p><?=$item->get_desc()?></p>
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
-              <?php if(count($item->get_options()) > 1) { ?>
-                  <select name="<?=$item->get_name()?>-color">
-                    <?php foreach($item->get_options() > 0 as color) { ?>
-                      <option value="<?=color?>"><?=color?></option>
-                    <?php } ?>
-                  </select>
-                <?php } ?>
+              <?php if(count($item->get_options()) > 1): ?>
+                <select name="<?=$item->get_name()?>-color">
+                  <?php foreach($item->get_options() > 0 as color) { ?>
+                    <option value="<?=color?>"><?=color?></option>
+                  <?php } ?>
+                </select>
+              <?php endif; ?>
               <form id='<?php echo $form_name ?>' method="POST" action="index.php">
                 <input type="submit" value="Add to cart">
               </form>
