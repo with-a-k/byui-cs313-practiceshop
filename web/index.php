@@ -5,11 +5,12 @@
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
   }
+  $postArgs = filter_input_array($_POST);
   foreach ($items as $index => $item) {
-    if (!empty($_POST[$item.'submit'])) {
+    if (!empty($postArgs[$item.'submit'])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
-      $addColor = $_POST[$addName . '-color'];
+      $addColor = $postArgs[$addName . '-color'];
       $addCost = $item->get_cost();
       array_push($_SESSION['cart'], new Item($addName, $addCost, $addDesc, [], $addColor));
     }
@@ -22,8 +23,8 @@
   </head>
   <body>
     <h2>Item List</h2>
-    <p><?php if (isset($_POST)) {
-      var_dump($_POST);
+    <p><?php if (isset($postArgs)) {
+      var_dump($postArgs);
     }?></p>
     <ul>
       <?php foreach ($items as $index => $item): ?>
