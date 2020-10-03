@@ -15,8 +15,7 @@
       $addDesc = $item->get_desc();
       $addColor = $_POST[$addName . '-color'];
       $addCost = $item->get_cost();
-      $addItem = new Item($addName, $addCost, $addDesc, [], $addColor);
-      array_push($_SESSION['cart'], $addItem);
+      array_push($_SESSION['cart'], new Item($addName, $addCost, $addDesc, [], $addColor));
     }
   }
 ?>
