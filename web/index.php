@@ -5,19 +5,12 @@
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
   }
-  error_log("Initialized session variables.");
   if(isset($_POST)) {
-    var_dump($_POST);
-    echo "\n";
+
   }
-  var_dump($_SESSION);
-  echo "\n";
-  error_log("Checked for POST.");
   foreach ($items as $index => $item) {
     $searchName = str_replace(" ", "_", $item->get_name());
-    echo "Searching for ".$searchName."-submit\n";
     if (!empty($_POST[$searchName.'-submit'])) {
-      echo "The item was found\n";
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
       $addColor = $_POST[$addName . '-color'];
