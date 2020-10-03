@@ -1,10 +1,18 @@
 <?php
   session_start();
+  include 'items.php';
   if (empty($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
+    $_SESSION['totalCost'] = 0.0;
   }
-  if ($_POST['item']) {
-
+  foreach ($items as $index => $item) {
+    if ($_POST[$item]) {
+      $addName = $item->get_name();
+      $addDesc = $item->get_desc();
+      $addColor = $item->get_color();
+      $addCost = $item->get_cost();
+      array_push($_SESSION['cart'], new Item($addName, $addCost, $addDesc, [], $addColor));
+    }
   }
 ?>
 <html>
@@ -14,17 +22,23 @@
   </head>
   <body>
     <h2>Item List</h2>
-    <?php include 'items.php'?>
-
     <ul>
-      <?php foreach ($items as $item): ?>
+      <?php foreach ($items as $index => $item): ?>
+        <?php $form_name = $item->get_name() ?>
         <li>
           <div class="item">
             <h3><?=$item->get_name()?></h3>
             <p><?=$item->get_desc()?></p>
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
-              <form id='<?php echo $item->get_name()?>' method="POST" action="index.php">
+              <?php if(count($item->get_options()) > 1) { ?>
+                  <select name="<?=$item->get_name()?>-color">
+                    <?php foreach($item->get_options() > 0 as color) { ?>
+                      <option value="<?=color?>"><?=color?></option>
+                    <?php } ?>
+                  </select>
+                <?php } ?>
+              <form id='<?php echo $form_name ?>' method="POST" action="index.php">
                 <input type="submit" value="Add to cart">
               </form>
             </div>
