@@ -22,8 +22,8 @@
   </head>
   <body>
     <h2>Item List</h2>
-    <p><?php if (!empty($_POST)) {
-      echo $_POST;
+    <p><?php if (isset($_POST)) {
+      var_dump($_POST);
     }?></p>
     <ul>
       <?php foreach ($items as $index => $item): ?>
