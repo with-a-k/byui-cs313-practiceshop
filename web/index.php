@@ -33,9 +33,9 @@
               <p><?=$item->get_cost()?></p>
               <?php if(count($item->get_options()) > 1): ?>
                 <select name="<?=$item->get_name()?>-color">
-                  <?php foreach($item->get_options() > 0 as color) { ?>
-                    <option value="<?=color?>"><?=color?></option>
-                  <?php } ?>
+                  <?php foreach($item->get_options() > 0 as color): ?>
+                    <option value="<?php echo $color?>"><?=$color?></option>
+                  <?php endforeach; ?>
                 </select>
               <?php endif; ?>
               <form id='<?php echo $form_name ?>' method="POST" action="index.php">
