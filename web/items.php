@@ -25,7 +25,7 @@
     public $customOptions;
     public $color;
 
-    function __construct($name, $cost, $desc, $options, $color) {
+    function __construct($name, $cost, $desc, $options, $color = "") {
       $this->itemName = $name;
       $this->itemCost = $cost;
       $this->itemDesc = $desc;
