@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php
+  include 'items.php';
+  session_start();
+?>
 <html>
   <head>
     <title>Shop</title>

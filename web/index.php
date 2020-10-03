@@ -1,6 +1,6 @@
 <?php
-  session_start();
   include 'items.php';
+  session_start();
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
