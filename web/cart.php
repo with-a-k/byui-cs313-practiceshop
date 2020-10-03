@@ -25,7 +25,7 @@
             <div class="inputs">
               <p><?php echo $item->get_cost() ?></p>
               <?php if(strlen($item->get_color()) > 0): ?>
-                <p><?php echo $item->get_color() ?></p>
+                <p>Color: <?php echo $item->get_color() ?></p>
               <?php endif; ?>
               <form name='<?php echo $form_name ?>' method="POST" action="index.php">
                 <input type="submit" value="Remove from cart">
