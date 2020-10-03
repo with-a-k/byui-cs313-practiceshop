@@ -18,8 +18,6 @@
     <ul>
       <?php foreach ($_SESSION['cart'] as $index => $item): ?>
         <?php $form_name = "item-".$index ?>
-        <p><?php echo $_SESSION['cart']['index']?></p>
-        <p><?php echo "If you see this, $item is likely undefined"?></p>
         <li>
           <div class="item">
             <h3><?php echo $item->get_name() ?></h3>

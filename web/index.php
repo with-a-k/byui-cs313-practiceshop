@@ -8,6 +8,7 @@
   if(isset($_POST)) {
 
   }
+  var_dump($_POST);
   foreach ($items as $index => $item) {
     $searchName = str_replace(" ", "_", $item->get_name());
     if (!empty($_POST[$searchName.'-submit'])) {
