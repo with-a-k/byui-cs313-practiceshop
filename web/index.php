@@ -1,7 +1,7 @@
 <?php
   session_start();
   include 'items.php';
-  if (empty($_SESSION['cart'])) {
+  if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
   }

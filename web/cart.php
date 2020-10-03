@@ -34,6 +34,6 @@
         </li>
       <?php endforeach; ?>
     </ul>
-
+    <a href="index.php">View Items</a>
   </body>
 </html>
