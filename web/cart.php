@@ -16,8 +16,8 @@
     <h2>Your Cart</h2>
     <ul>
       <?php $cartItems = $_SESSION['cart'] ?>
-      <?php var_dump $cartItems ?>
-      <?php foreach ($cartItems as $index => $item): ?>
+      <?php var_dump($cartItems) ?>
+      <?php foreach ($_SESSION['cart'] as $index => $item): ?>
         <?php $form_name = "item-".$index ?>
         <?php echo $form_name ?>
         <li>
