@@ -7,11 +7,13 @@
   }
   error_log("Initialized session variables.");
   if(isset($_POST)) {
-    error_log(var_dump($_POST));
+    var_dump($_POST);
   }
+  var_dump($_SESSION);
   error_log("Checked for POST.");
   foreach ($items as $index => $item) {
-    if (!empty($postArgs[$item->get_name().'-submit'])) {
+    $searchName = str_replace(" ", "_", $item->get_name());
+    if (!empty($postArgs[$searchName.'-submit'])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
       $addColor = $postArgs[$addName . '-color'];
