@@ -1,6 +1,7 @@
 <?php
   include 'items.php';
   session_start();
+  var_dump($_POST);
 ?>
 <html>
   <head>
@@ -8,6 +9,6 @@
     <link rel=stylesheet href="styles/foundation.css">
   </head>
   <body>
-    <?php include 'items.php'?>
+
   </body>
 </html>

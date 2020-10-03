@@ -14,6 +14,7 @@
       $addCost = $item->get_cost();
       $addItem = new Item($addName, $addCost, $addDesc, [], $addColor);
       array_push($_SESSION['cart'], $addItem);
+      $_SESSION['totalCost'] += $addCost;
     }
   }
 ?>

@@ -3,6 +3,7 @@
   session_start();
   foreach ($_SESSION['cart'] as $index => $item) {
     if (isset($_POST["remove-item-".$index])) {
+      $_SESSION['totalCost'] -= $item->get_cost();
       array_splice($_SESSION['cart'], $index, 1);
     }
   }
@@ -35,7 +36,6 @@
         </li>
       <?php endforeach; ?>
     </ul>
-    <a href="index.php">View Items</a>
-    <a href="checkout.php">Check Out</a>
+    <a href="index.php">View Items</a> | <a href="checkout.php">Check Out</a>
   </body>
 </html>
