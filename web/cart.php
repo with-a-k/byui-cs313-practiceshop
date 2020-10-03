@@ -6,6 +6,7 @@
       array_splice($_SESSION['cart'], $index, 1);
     }
   }
+  var_dump($_SESSION);
 ?>
 <html>
   <head>
