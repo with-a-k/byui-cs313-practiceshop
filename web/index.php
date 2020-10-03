@@ -15,11 +15,12 @@
   error_log("Checked for POST.");
   foreach ($items as $index => $item) {
     $searchName = str_replace(" ", "_", $item->get_name());
-    echo "Searching for ".$searchName."-submit";
-    if (!empty($postArgs[$searchName.'-submit'])) {
+    echo "Searching for ".$searchName."-submit\n";
+    if (!empty($_POST[$searchName.'-submit'])) {
+      echo "The item was found\n";
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
-      $addColor = $postArgs[$addName . '-color'];
+      $addColor = $_POST[$addName . '-color'];
       $addCost = $item->get_cost();
       array_push($_SESSION['cart'], new Item($addName, $addCost, $addDesc, [], $addColor));
     }
