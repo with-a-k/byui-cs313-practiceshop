@@ -5,11 +5,14 @@
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
   }
+  error_log("Initialized session variables.");
   if(isset($_POST)) {
+    error_log("Filtering POST array.");
     $postArgs = filter_input_array($_POST);
   }
+  error_log("Checked for POST.");
   foreach ($items as $index => $item) {
-    if (!empty($postArgs[$item.'submit'])) {
+    if (!empty($postArgs[$item->get_name().'submit'])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
       $addColor = $postArgs[$addName . '-color'];
