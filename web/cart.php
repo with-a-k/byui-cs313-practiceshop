@@ -6,8 +6,6 @@
       array_splice($_SESSION['cart'], $index, 1);
     }
   }
-  var_dump($_SESSION['cart']);
-  var_dump($_SESSION['cart'][0]);
 ?>
 <html>
   <head>
@@ -17,12 +15,14 @@
   <body>
     <h2>Your Cart</h2>
     <ul>
-      <?php foreach ($_SESSION['cart'] as $index => $item): ?>
+      <?php $cartItems = $_SESSION['cart'] ?>
+      <?php var_dump $cartItems ?>
+      <?php foreach ($cartItems as $index => $item): ?>
         <?php $form_name = "item-".$index ?>
         <?php echo $form_name ?>
         <li>
           <div class="item">
-            <h3><?php echo $_SESSION['cart'][0] ?></h3>
+            <h3><?php echo $item->get_name() ?></h3>
             <p><?php echo $item->get_desc() ?></p>
             <div class="inputs">
               <p><?php echo $item->get_cost() ?></p>
