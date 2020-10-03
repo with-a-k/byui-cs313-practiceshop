@@ -6,7 +6,7 @@
     $_SESSION['totalCost'] = 0.0;
   }
   foreach ($items as $index => $item) {
-    if ($_POST[$item]) {
+    if (isset($_POST[$item])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
       $addColor = $item->get_color();
@@ -33,7 +33,7 @@
               <p><?=$item->get_cost()?></p>
               <?php if(count($item->get_options()) > 1): ?>
                 <select name="<?=$item->get_name()?>-color">
-                  <?php foreach($item->get_options() > 0 as color): ?>
+                  <?php foreach($item->get_options() as color): ?>
                     <option value="<?php echo $color?>"><?=$color?></option>
                   <?php endforeach; ?>
                 </select>
