@@ -5,15 +5,12 @@
     $_SESSION['cart'] = [];
     $_SESSION['totalCost'] = 0.0;
   }
-  if(isset($_POST)) {
-
-  }
   foreach ($items as $index => $item) {
     $searchName = str_replace(" ", "_", $item->get_name());
     if (!empty($_POST[$searchName.'-submit'])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
-      $addColor = $_POST[$searchName . '-color'];
+      $addColor = htmlspecialchars($_POST[$searchName . '-color']);
       $addCost = $item->get_cost();
       $addItem = new Item($addName, $addCost, $addDesc, [], $addColor);
       array_push($_SESSION['cart'], $addItem);

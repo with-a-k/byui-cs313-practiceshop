@@ -1,7 +1,6 @@
 <?php
   include 'items.php';
   session_start();
-  var_dump($_POST);
   foreach ($_SESSION['cart'] as $index => $item) {
     if (isset($_POST["remove-item-".$index])) {
       array_splice($_SESSION['cart'], $index, 1);
@@ -37,5 +36,6 @@
       <?php endforeach; ?>
     </ul>
     <a href="index.php">View Items</a>
+    <a href="checkout.php">Check Out</a>
   </body>
 </html>
