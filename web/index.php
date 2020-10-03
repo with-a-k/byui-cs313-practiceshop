@@ -7,8 +7,7 @@
   }
   error_log("Initialized session variables.");
   if(isset($_POST)) {
-    error_log("Filtering POST array.");
-    $postArgs = filter_input_array($_POST);
+    error_log(var_dump($_POST));
   }
   error_log("Checked for POST.");
   foreach ($items as $index => $item) {
