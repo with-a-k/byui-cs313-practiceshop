@@ -28,13 +28,13 @@
     <h2>Item List</h2>
     <ul>
       <?php foreach ($items as $index => $item): ?>
-        <?php $form_name = $item->get_name() ?>
+        <?php $form_name = $item->get_name(); ?>
         <li>
           <div class="item">
-            <h3><?=$item->get_name()?></h3>
-            <p><?=$item->get_desc()?></p>
+            <h3><?php echo $item->get_name(); ?></h3>
+            <p><?php echo $item->get_desc(); ?></p>
             <div class="inputs">
-              <p><?=$item->get_cost()?></p>
+              <p><?php echo $item->get_cost(); ?></p>
               <form name='<?php echo $form_name ?>' method="POST" action="index.php">
                 <?php if(count($item->get_options()) > 1): ?>
                   <select name="<?php echo $form_name?>-color">
