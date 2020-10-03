@@ -8,7 +8,7 @@
     <link rel=stylesheet href="styles/foundation.css">
   </head>
   <body>
-
+    <h2>Check Out</h2>
     <form name="address" action="confirm.php" method="POST">
       Street Address: <input type="text" name="address-street">
       City: <input type="text" name="address-city">

@@ -13,6 +13,7 @@
     <link rel=stylesheet href="styles/foundation.css">
   </head>
   <body>
+    <h2>Purchase Complete</h2>
     <div class="confirm">
       <p>Thank you for your purchase! Your items totaled $<?=$_SESSION['totalCost']?>.</p>
       <p>They will be sent to the address you submitted:</p>
