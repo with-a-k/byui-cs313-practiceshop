@@ -8,11 +8,14 @@
   error_log("Initialized session variables.");
   if(isset($_POST)) {
     var_dump($_POST);
+    echo "\n";
   }
   var_dump($_SESSION);
+  echo "\n";
   error_log("Checked for POST.");
   foreach ($items as $index => $item) {
     $searchName = str_replace(" ", "_", $item->get_name());
+    echo "Searching for ".$searchName."-submit";
     if (!empty($postArgs[$searchName.'-submit'])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
