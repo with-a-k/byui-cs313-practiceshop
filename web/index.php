@@ -6,10 +6,10 @@
     $_SESSION['totalCost'] = 0.0;
   }
   foreach ($items as $index => $item) {
-    if (isset($_POST[$item])) {
+    if (!empty($_POST[$item])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
-      $addColor = $item->get_color();
+      $addColor = $_POST[$addName . '-color'];
       $addCost = $item->get_cost();
       array_push($_SESSION['cart'], new Item($addName, $addCost, $addDesc, [], $addColor));
     }
@@ -31,15 +31,15 @@
             <p><?=$item->get_desc()?></p>
             <div class="inputs">
               <p><?=$item->get_cost()?></p>
-              <?php if(count($item->get_options()) > 1): ?>
-                <select name="<?php echo $item->get_name()?>-color">
-                  <?php foreach($item->get_options() as $color): ?>
-                    <option value="<?php echo $color?>"><?php echo $color?></option>
-                  <?php endforeach; ?>
-                </select>
-              <?php endif; ?>
               <form name='<?php echo $form_name ?>' method="POST" action="index.php">
-                <input type="submit" value="Add to cart">
+                <?php if(count($item->get_options()) > 1): ?>
+                  <select name="<?php echo $form_name?>-color">
+                    <?php foreach($item->get_options() as $color): ?>
+                      <option value="<?php echo $color?>"><?php echo $color?></option>
+                    <?php endforeach; ?>
+                  </select>
+                <?php endif; ?>
+                <input type="submit" name='<?php echo $form_name?>' value="Add to cart">
               </form>
             </div>
           </div>

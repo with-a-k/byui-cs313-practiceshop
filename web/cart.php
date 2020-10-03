@@ -3,7 +3,7 @@
   include 'items.php';
   foreach ($_SESSION['cart'] as $index => $item) {
     if (isset($_POST["item-".$index])) {
-      unset($_SESSION['cart'], $index);
+      array_splice($_SESSION['cart'], $index, 1);
     }
   }
 ?>
@@ -26,7 +26,7 @@
               <?php if(strlen($item->get_color()) > 0): ?>
                 <p><?=$item->get_color()?></p>
               <?php endif; ?>
-              <form id='<?php echo $form_name ?>' method="POST" action="index.php">
+              <form name='<?php echo $form_name ?>' method="POST" action="index.php">
                 <input type="submit" value="Remove from cart">
               </form>
             </div>
