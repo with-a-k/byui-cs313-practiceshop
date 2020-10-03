@@ -6,7 +6,7 @@
     $_SESSION['totalCost'] = 0.0;
   }
   foreach ($items as $index => $item) {
-    if (!empty($_POST[$item])) {
+    if (!empty($_POST[$item.'submit'])) {
       $addName = $item->get_name();
       $addDesc = $item->get_desc();
       $addColor = $_POST[$addName . '-color'];
@@ -22,6 +22,7 @@
   </head>
   <body>
     <h2>Item List</h2>
+    <p><?php echo $_POST?></p>
     <ul>
       <?php foreach ($items as $index => $item): ?>
         <?php $form_name = $item->get_name() ?>
@@ -39,7 +40,7 @@
                     <?php endforeach; ?>
                   </select>
                 <?php endif; ?>
-                <input type="submit" name='<?php echo $form_name?>' value="Add to cart">
+                <input type="submit" name='<?php echo $form_name?>-submit' value="Add to cart">
               </form>
             </div>
           </div>
